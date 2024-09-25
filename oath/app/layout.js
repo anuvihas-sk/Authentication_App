@@ -1,9 +1,12 @@
+import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function layout() {
+const layout = () => {
   return (
-    <div>
-      
-    </div>
+    <View>
+      <Text>layout</Text>
+    </View>
   )
 }
+
+export default layout
