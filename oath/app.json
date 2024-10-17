@@ -2,6 +2,7 @@
   "expo": {
     "name": "oath",
     "slug": "oath",
+    "scheme": "oath",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
