@@ -1,10 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { Video, ResizeMode } from 'expo-av';
 
 const Home = () => {
   return (
-    <View>
-      <Text>Home</Text>
+    <View style={styles.container}>
+      { }
+        <Video
+        ref={video}
+        style={styles.video}
+        source="https://cdn.pixabay.com/video/2024/09/21/232561_large.mp4"
+        resizeMode={ResizeMode.COVER}
+        shouldPlay
+        isLooping
+        />
+
     </View>
   )
 }
