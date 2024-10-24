@@ -22,9 +22,9 @@ export default function App() {
         onPlaybackStatusUpdate={(status) => setStatus(() => status)}
       />
       <View style={styles.overlay}>
-        <Text style={styles.mainText}>Masynctech</Text>
-        <Text style={styles.subText}>Coding School</Text>
-        <Text style={styles.tagline}>Build Apps, Build Futures</Text>
+        <Text style={styles.mainText}>Authentication App</Text>
+        <Text style={styles.subText}>-------------------------</Text>
+        <Text style={styles.tagline}>-->    Anuvihas SK</Text>
       </View>
       <View style={styles.buttons}>
         <TouchableOpacity
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   },
   mainText: {
     color: "white",
-    fontSize: 68,
+    fontSize: 40,
     fontWeight: "bold",
     textAlign: "center",
   },
