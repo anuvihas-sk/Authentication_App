@@ -1,25 +1,48 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { Video, ResizeMode } from 'expo-av';
+import * as React from "react";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Video, ResizeMode } from "expo-av";
+import { useRouter } from "expo-router";
 
-const Home = () => {
+export default function App() {
+  const video = React.useRef(null);
+  const [status, setStatus] = React.useState({});
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
-      { }
-        <Video
+      <Video
         ref={video}
         style={styles.video}
-        source="https://cdn.pixabay.com/video/2024/09/21/232561_large.mp4"
+        source={{
+          uri: "https://videos.pexels.com/video-files/5377700/5377700-sd_540_960_25fps.mp4",
+        }}
         resizeMode={ResizeMode.COVER}
         shouldPlay
         isLooping
-        />
-
+        onPlaybackStatusUpdate={(status) => setStatus(() => status)}
+      />
+      <View style={styles.overlay}>
+        <Text style={styles.mainText}>Masynctech</Text>
+        <Text style={styles.subText}>Coding School</Text>
+        <Text style={styles.tagline}>Build Apps, Build Futures</Text>
+      </View>
+      <View style={styles.buttons}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => router.push("/auth/login")}
+        >
+          <Text style={styles.buttonText}>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => router.push("/auth/register")}
+        >
+          <Text style={styles.buttonText}>Register</Text>
+        </TouchableOpacity>
+      </View>
     </View>
-  )
+  );
 }
-
-export default Home;
 
 const styles = StyleSheet.create({
   container: {
