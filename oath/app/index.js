@@ -24,7 +24,7 @@ export default function App() {
       <View style={styles.overlay}>
         <Text style={styles.mainText}>Authentication App</Text>
         <Text style={styles.subText}>-------------------------</Text>
-        <Text style={styles.tagline}>-->>    Anuvihas SK</Text>
+        <Text style={styles.tagline}>---|    Anuvihas SK    |---</Text>
       </View>
       <View style={styles.buttons}>
         <TouchableOpacity
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   tagline: {
     color: "white",
     fontSize: 18,
-    fontStyle: "italic",
+    // fontStyle: "italic",
     textAlign: "center",
     marginTop: 10,
   },
