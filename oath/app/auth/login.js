@@ -4,7 +4,8 @@ import {
   TextInput,
   Text,
   TouchableOpacity,
-} from "react-native";import React from 'react';
+} from "react-native";
+import React from 'react';
 import { Formik } from "formik";
 import * as Yup from "yup";
 
@@ -13,12 +14,13 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().min(6, "Too Short!").required("Required"),
 });
 
+
 const login = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
       <Formik
-        initialValues={{ email: "atom@gmail.com", password: "123456" }}
+        initialValues={{ email: "abc@gmail.com", password: "123456" }}
         validationSchema={LoginSchema}
         onSubmit={(values) => {
           console.log(values);
