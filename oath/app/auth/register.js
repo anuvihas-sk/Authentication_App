@@ -9,9 +9,13 @@ import React from 'react';
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-const LoginSchema = Yup.object().shape({
+const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
   password: Yup.string().min(6, "Too Short!").required("Required"),
+  confirmPassword: Yup.string().oneOf(
+    [Yup.ref("password"), null],
+    "Passwords must match"
+  ),
 });
 
 
@@ -20,8 +24,8 @@ const register = () => {
     <View style={styles.container}>
       <Text style={styles.title}>register</Text>
       <Formik
-        initialValues={{ email: "abc@gmail.com", password: "123456" }}
-        validationSchema={LoginSchema}
+        initialValues={{ email: "abc@gmail.com", password: "123456", password: "123456" }}
+        validationSchema={validationSchema}
         onSubmit={(values) => {
           console.log(values);
           mutation
@@ -58,14 +62,14 @@ const register = () => {
             ) : null}
             <TextInput
               style={styles.input}
-              placeholder="Password"
-              onChangeText={handleChange("password")}
-              onBlur={handleBlur("password")}
+              placeholder="Confirm Password"
+              onChangeText={handleChange("confirmpassword")}
+              onBlur={handleBlur("confirmpassword")}
               value={values.password}
               secureTextEntry
             />
-            {errors.password && touched.password ? (
-              <Text style={styles.errorText}>{errors.password}</Text>
+            {errors.confirmPassword && touched.confirmPassword ? (
+              <Text style={styles.errorText}>{errors.confirmPassword}</Text>
             ) : null}
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
               <Text style={styles.buttonText}>register</Text>
