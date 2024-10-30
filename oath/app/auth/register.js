@@ -24,7 +24,7 @@ const register = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Register</Text>
       <Formik
-        initialValues={{ email: "abc@gmail.com", password: "1@Ads", confirmpassword: "" }}
+        initialValues={{ email: "abc@gmail.com", password: "dsadasAds", confirmpassword: "dsadasAds" }}
         onSubmit={(values) => {
           console.log(values);
         }}
@@ -66,11 +66,11 @@ const register = () => {
               placeholder="Confirm Password"
               onChangeText={handleChange("confirmpassword")}
               onBlur={handleBlur("confirmpassword")}
-              value={values.password}
+              value={values.confirmpassword}
               secureTextEntry
             />
-            {errors.confirmPassword && touched.confirmPassword ? (
-              <Text style={styles.errorText}>{errors.confirmPassword}</Text>
+            {errors.confirmpassword && touched.confirmpassword ? (
+              <Text style={styles.errorText}>{errors.confirmpassword}</Text>
             ) : null}
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
               <Text style={styles.buttonText}>Register</Text>

@@ -24,16 +24,6 @@ const login = () => {
         validationSchema={LoginSchema}
         onSubmit={(values) => {
           console.log(values);
-          mutation
-            .mutateAsync(values)
-            .then((data) => {
-              console.log("data", data);
-              dispatch(loginAction(data));
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-          router.push("/(tabs)");
         }}
       >
         {({
