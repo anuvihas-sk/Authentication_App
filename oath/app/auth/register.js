@@ -24,21 +24,11 @@ const register = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Register</Text>
       <Formik
-        initialValues={{ email: "", password: "", password: "" }}
-        validationSchema={validationSchema}
+        initialValues={{ email: "abc@gmail.com", password: "1@Ads", confirmpassword: "" }}
         onSubmit={(values) => {
           console.log(values);
-          mutation
-            .mutateAsync(values)
-            .then((data) => {
-              console.log("data", data);
-              dispatch(loginAction(data));
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-          router.push("/(tabs)");
         }}
+        validationSchema={validationSchema}
       >
         {({
           handleChange,
@@ -68,8 +58,8 @@ const register = () => {
               value={values.password}
               secureTextEntry
             />
-            {errors.confirmPassword && touched.confirmPassword ? (
-              <Text style={styles.errorText}>{errors.confirmPassword}</Text>
+            {errors.password && touched.password ? (
+              <Text style={styles.errorText}>{errors.password}</Text>
             ) : null}
                         <TextInput
               style={styles.input}
