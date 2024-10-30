@@ -22,7 +22,7 @@ const login = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ email: "abc@gmail.com", password: "trdyhhgfd" }}
         validationSchema={LoginSchema}
         onSubmit={(values) => {
           console.log(values);
