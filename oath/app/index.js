@@ -23,7 +23,6 @@ export default function App() {
       />
       <View style={styles.overlay}>
         <Text style={styles.mainText}>Authentication App</Text>
-        <Text style={styles.subText}>-------------------------</Text>
         <Text style={styles.tagline}>---|    Anuvihas SK    |---</Text>
       </View>
       <View style={styles.buttons}>
@@ -64,16 +63,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
-  subText: {
-    color: "white",
-    fontSize: 24,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
   tagline: {
     color: "white",
     fontSize: 18,
-    // fontStyle: "italic",
     textAlign: "center",
     marginTop: 10,
   },
@@ -91,7 +83,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 25,
-    elevation: 3, // Adds a shadow effect on Android
+    elevation: 3, 
   },
   buttonText: {
     color: "white",

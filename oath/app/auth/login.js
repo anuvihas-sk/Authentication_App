@@ -8,6 +8,7 @@ import {
 import React from 'react';
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { useRouter } from "expo-router";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -16,6 +17,7 @@ const LoginSchema = Yup.object().shape({
 
 
 const login = () => {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
@@ -24,6 +26,7 @@ const login = () => {
         validationSchema={LoginSchema}
         onSubmit={(values) => {
           console.log(values);
+          router.push("/(tab)");
         }}
       >
         {({

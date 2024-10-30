@@ -8,6 +8,8 @@ import {
 import React from 'react';
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { Stack } from "expo-router";
+
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -80,6 +82,7 @@ const register = () => {
       </Formik>
     </View>
   );
+
 }
 
 
