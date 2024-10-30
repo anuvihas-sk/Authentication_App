@@ -22,9 +22,9 @@ const validationSchema = Yup.object().shape({
 const register = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>register</Text>
+      <Text style={styles.title}>Register</Text>
       <Formik
-        initialValues={{ email: "abc@gmail.com", password: "123456", password: "123456" }}
+        initialValues={{ email: "", password: "", password: "" }}
         validationSchema={validationSchema}
         onSubmit={(values) => {
           console.log(values);
@@ -62,9 +62,9 @@ const register = () => {
             ) : null}
             <TextInput
               style={styles.input}
-              placeholder="Confirm Password"
-              onChangeText={handleChange("confirmpassword")}
-              onBlur={handleBlur("confirmpassword")}
+              placeholder="Password"
+              onChangeText={handleChange("password")}
+              onBlur={handleBlur("password")}
               value={values.password}
               secureTextEntry
             />
@@ -83,7 +83,7 @@ const register = () => {
               <Text style={styles.errorText}>{errors.confirmPassword}</Text>
             ) : null}
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-              <Text style={styles.buttonText}>register</Text>
+              <Text style={styles.buttonText}>Register</Text>
             </TouchableOpacity>
           </View>
         )}
