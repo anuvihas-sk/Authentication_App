@@ -71,6 +71,17 @@ const register = () => {
             {errors.confirmPassword && touched.confirmPassword ? (
               <Text style={styles.errorText}>{errors.confirmPassword}</Text>
             ) : null}
+                        <TextInput
+              style={styles.input}
+              placeholder="Confirm Password"
+              onChangeText={handleChange("confirmpassword")}
+              onBlur={handleBlur("confirmpassword")}
+              value={values.password}
+              secureTextEntry
+            />
+            {errors.confirmPassword && touched.confirmPassword ? (
+              <Text style={styles.errorText}>{errors.confirmPassword}</Text>
+            ) : null}
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
               <Text style={styles.buttonText}>register</Text>
             </TouchableOpacity>
