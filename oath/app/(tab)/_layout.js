@@ -7,7 +7,6 @@ export default function RootLayout() {
         name="index"
         options={{
           headerShown: false,
-
           title: "Home",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="home" color={color} />
@@ -17,6 +16,7 @@ export default function RootLayout() {
       <Tabs.Screen
         name="profile"
         options={{
+          headerShown: false,
           title: "Profile",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="user" color={color} />
@@ -26,6 +26,7 @@ export default function RootLayout() {
       <Tabs.Screen
         name="settings"
         options={{
+          headerShown: false, 
           title: "Settings",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="cog" color={color} />
